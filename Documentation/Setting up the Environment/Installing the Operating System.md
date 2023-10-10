@@ -1,5 +1,3 @@
-## Description
-
 - Download the raspberry pi imager from
 
 [Raspberry Pi OS – Raspberry Pi](https://www.raspberrypi.com/software/)

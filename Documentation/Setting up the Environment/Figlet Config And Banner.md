@@ -1,5 +1,3 @@
-## Description
-
 Banner message before the authentication
 
 `/etc/ssh/sshd_config`

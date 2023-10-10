@@ -1,3 +1,4 @@
+
 ## Resources
 
 1. Create a github [student developer pack](https://education.github.com/pack) account

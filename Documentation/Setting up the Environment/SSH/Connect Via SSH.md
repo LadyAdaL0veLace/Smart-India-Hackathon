@@ -1,5 +1,4 @@
-###
-for more command flags use the man pages or type `ssh —help`
+usage, for more command flags use the man pages or type `ssh —help`
 
 ### Syntax
 
@@ -10,4 +9,7 @@ ssh <username>@<ipaddres>
 If you are connecting for the first time then type yes before it prompts you for the password.
 
 ### Different port
-`ssh username@ipaddress -p port`
+
+```bash
+ssh <username>@<ipaddres>
+```
