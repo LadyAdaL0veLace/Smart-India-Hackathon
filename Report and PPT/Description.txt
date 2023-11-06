@@ -1,0 +1,9 @@
+In today's age of significant progress in the fields of the internet and artificial intelligence, there is a wealth of learning resources available to students eager to acquire knowledge. However, traditional classroom-style learning often presents challenges. Some students quickly grasp concepts, while others may struggle to keep pace, leading to gaps in understanding and a sense of apprehension towards their studies. This issue is not unique to slower learners; it affects many, including us in our own academic journeys.
+
+Recognising this common problem, our team deliberated and developed a solution to alleviate subject-related anxieties and make learning more engaging. Our solution centres around the concept of self-paced learning.
+
+The core idea of self-paced learning is to empower students to learn at their own speed and convenience. Essentially, students are encouraged to explore complex subjects by navigating the vast resources available on the internet, absorbing knowledge, and then applying it. This approach offers numerous benefits, enabling students to delve deeper into topics and fostering a genuine interest in the material. However, the challenge lies in knowing where to start, and this is where our project comes into play.
+
+Our project aims to educate students on various computer science topics, including network security, the Linux operating system, IoT, and more, all within the framework of self-paced learning. We've sliced and diced the material into a series of levels, turning the learning journey into an exciting, challenging game. Finish one level, and you get a reward, keeping your motivation fired up to keep pushing forward. This approach isn't just engaging; it's designed to help you gain practical knowledge that can supercharge your technical skills.
+
+	
