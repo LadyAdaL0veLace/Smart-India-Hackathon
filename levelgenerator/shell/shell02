@@ -20,3 +20,11 @@ useradd -m -s /bin/bash "$username"
 echo "$username:$password" | chpasswd
 
 echo "User '$username' created successfully with password."
+
+# Create a directory named inhere
+mkdir inhere
+echo "Directory named 'inhere' has been created."
+
+# Create a file named .hidden in the directory inhere
+echo "The password to the next level is shell03" > inhere/.hidden
+echo "File named '.hidden' has been created in 'inhere' directory."
