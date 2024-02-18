@@ -20,3 +20,7 @@ useradd -m -s /bin/bash "$username"
 echo "$username:$password" | chpasswd
 
 echo "User '$username' created successfully with password."
+
+# Create a readme.txt file
+echo "The Password to the next level is shell01" > readme.txt
+echo "readme.txt file has been created."
