@@ -22,5 +22,7 @@ echo "$username:$password" | chpasswd
 echo "User '$username' created successfully with password."
 
 # Create a file named "-"
-echo "The Password to the next level is shell02" > -
-echo "File named '-' has been created."
+echo "The Password to the next level is shell02" > - 
+echo "File named '-' has been created." 
+chown 440 -
+chgrp shell02 -

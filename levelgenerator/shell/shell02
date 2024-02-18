@@ -24,7 +24,11 @@ echo "User '$username' created successfully with password."
 # Create a directory named inhere
 mkdir inhere
 echo "Directory named 'inhere' has been created."
+chown 441 inhere
+chgrp shell03 inhere
 
 # Create a file named .hidden in the directory inhere
 echo "The password to the next level is shell03" > inhere/.hidden
 echo "File named '.hidden' has been created in 'inhere' directory."
+chown 440 inhere/.hidden
+chgrp shell03 inhere/.hidden
