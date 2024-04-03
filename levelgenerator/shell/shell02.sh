@@ -7,7 +7,10 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 username="shell02"
+#password=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64 ; echo '')
+#passwordNextLevel=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64 ; echo '')
 password="shell02"
+passwordNextLevel="shell03"
 
 # Check if the user already exists
 if id "$username" &>/dev/null; then
@@ -21,14 +24,12 @@ echo "$username:$password" | chpasswd
 
 echo "User '$username' created successfully with password."
 
-# Create a directory named inhere
-mkdir inhere
-echo "Directory named 'inhere' has been created."
-chown 441 inhere
-chgrp shell03 inhere
+# Create a directory named inhere in the user's home directory
+mkdir /home/$username/inhere
+echo "Directory named 'inhere' has been created in the user's home directory."
 
 # Create a file named .hidden in the directory inhere
-echo "The password to the next level is shell03" > inhere/.hidden
+echo "The password to the next level is shell03" > /home/$username/inhere/.hidden
 echo "File named '.hidden' has been created in 'inhere' directory."
-chown 440 inhere/.hidden
-chgrp shell03 inhere/.hidden
+
+echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'shell02'" >> /home/shell02/.bashrc

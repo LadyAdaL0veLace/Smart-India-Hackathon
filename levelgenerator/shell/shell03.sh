@@ -7,7 +7,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 username="shell03"
-password="shell03"
+passwd="shell03"
 
 # Check if the user already exists
 if id "$username" &>/dev/null; then
@@ -17,7 +17,7 @@ fi
 
 # Create the user with the hardcoded username and password
 useradd -m -s /bin/bash "$username"
-echo "$username:$password" | chpasswd
+echo "$username:$passwd" | chpasswd
 
 echo "User '$username' created successfully with password."
 
@@ -37,5 +37,5 @@ echo -n -e '\xAA\xBB\xCC\xDD\xEE\xFF' > file5
 echo "Created file4 with non-human-readable text."
 
 # Create a file with human-readable text
-echo "The password for the next level is shell04" > file4
+echo "The password for the next level is: shell04" > file4
 echo "Created password_file with human-readable text."
