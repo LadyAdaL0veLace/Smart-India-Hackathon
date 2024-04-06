@@ -1,55 +1,34 @@
-#!/bin/less
+#!/usr/bin/glow
 
 ```
-██╗     ███████╗██╗   ██╗███████╗██╗      ██████╗  ██████╗
-██║     ██╔════╝██║   ██║██╔════╝██║     ██╔═████╗██╔═████╗
-██║     █████╗  ██║   ██║█████╗  ██║     ██║██╔██║██║██╔██║
-██║     ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║     ████╔╝██║████╔╝██║
-███████╗███████╗ ╚████╔╝ ███████╗███████╗╚██████╔╝╚██████╔╝
-╚══════╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝ ╚═════╝  ╚═════╝
+██████╗ ██╗   ██╗████████╗███████╗██╗  ██╗ ██████╗  ██████╗
+██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝╚██╗██╔╝██╔═████╗██╔═████╗
+██████╔╝ ╚████╔╝    ██║   █████╗   ╚███╔╝ ██║██╔██║██║██╔██║
+██╔══██╗  ╚██╔╝     ██║   ██╔══╝   ██╔██╗ ████╔╝██║████╔╝██║
+██████╔╝   ██║      ██║   ███████╗██╔╝ ██╗╚██████╔╝╚██████╔╝
+╚═════╝    ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝
 ```
-
+ 
 # INTRODUCTION
 
-- This level will teach you how to blink an led on the raspberry pi 3
+- Welcome to level zero of the BYTEX challenges
 
-- Connect CN9 to CN4, Dont forget this part your leds won't blink at all
+- This level will teach you how to install the **arduino-cli** software for the arduino UNO bloard
 
-- Create a file called blink.py 
+### Download the latest Arduino CLI binary
+`curl -fsSL https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Linux_64bit.tar.gz -o arduino-cli.tar.gz`
 
-- Try out the example code and later try implementing the challenge
+### Extract the downloaded archive
+`tar xf arduino-cli.tar.gz`
 
-- There are a total of 4 leds on the board on pin numbers
+### Move arduino-cli to a directory in PATH
+`sudo mv arduino-cli /usr/local/bin/`
 
-|  Led  |  Pin  |
-|  :--- |  :--- |
-|  led1 |  15	|
-|  led2	|  12	|
-|  led3 |  3	|
-|  led4	|  5	|
+### Clean up
+`rm arduino-cli.tar.gz`
 
-## EXAMPLE CODE
+### Verify installation
 
-```
+- Type **arduino-cli** on the terminal, you should see some output, else your installation didn't work
 
-import RPi.GPIO as GPIO
-import time
-
-GPIO.setmode(GPIO.BOARD)
-GPIO.setwarnings(False)
-
-led1 = 15
-
-GPIO.setup(led1,GPIO.OUT)		        # pin is connected to LED and should be setup as out
-
-print("Led is ON")
-print("Press Ctrl+c to quit")
-
-while(True):
-    GPIO.output(led1, True)     
-
-```
-
-## CHALLENGE 0x00
-
-- Turn led 2 and led 4 on and turn led 1 and led 3 off.
+- Also try running the **password.sh** file to get the password to the next level `./password.sh`
