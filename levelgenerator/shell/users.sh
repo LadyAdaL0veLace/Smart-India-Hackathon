@@ -9,6 +9,8 @@ fi
 # Declare an array to store usernames and passwords
 declare -A user_passwords
 
+echo "Usernames and Passwords:" > /home/.passwords.txt
+
 # Iterate over shell variables using a for loop
 for ((i=0; i<=10; i++)); do
     # Generate username and password
@@ -23,18 +25,12 @@ for ((i=0; i<=10; i++)); do
 
     # Add username and password to the array
     user_passwords[$username]=$password
-done
 
-# Create users and set passwords
-for username in "${!user_passwords[@]}"; do
     useradd -m -s /bin/bash "$username"
     echo "$username:${user_passwords[$username]}" | chpasswd
-done
 
-# Save usernames and passwords to a passwords.txt file
-echo "Usernames and Passwords:" > /home/.passwords.txt
-for username in "${!user_passwords[@]}"; do
     echo "Username: $username, Password: ${user_passwords[$username]}" >> /home/.passwords.txt
+
 done
 
 chmod 700 /home/.passwords.txt

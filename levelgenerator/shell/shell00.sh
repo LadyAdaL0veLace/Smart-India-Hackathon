@@ -7,17 +7,19 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 username="shell00"
-passwordNextLevel="shell01"
 
-# Check if the user already exists
+# Check if the user exists
 if ! id "$username" &>/dev/null; then
     echo "User '$username' does not exist."
     exit 1
 fi
 
 # Create a readme.txt file
-echo "The Password to the next level is $passwordNextLevel" > /home/$username/readme.txt
+echo "The Password to the next level is shell01" > /home/$username/readme.txt
 echo "readme.txt file has been created."
 
+chmod 440 /home/$username/readme.txt
+chgrp shell01 /home/$username/readme.txt
+
 # cat the figlet bammer om the .bashrc file
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell00'" >> /home/shell00/.bashrc
+echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell00'" >> /home/$username/.bashrc

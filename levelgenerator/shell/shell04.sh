@@ -7,28 +7,36 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 username="shell04"
-password="shell04"
 
-# Check if the user already exists
-if id "$username" &>/dev/null; then
-    echo "User '$username' already exists."
+# Check if the user exists
+if ! id "$username" &>/dev/null; then
+    echo "User '$username' does not exist."
     exit 1
 fi
 
-# Create the user with the hardcoded username and password
-useradd -m -s /bin/bash "$username"
-echo "$username:$password" | chpasswd
-
-echo "User '$username' created successfully with password."
-
 # Create a file with human-readable text, 1033 bytes in size, not executable
-echo "The password for the next level is shell05" > file0
-truncate -s 1033 password_file
-chmod -x password_file
+echo "The password for the next level is shell05" > /home/$username/file8
+truncate -s 1033 /home/$username/file8
+chmod -x /home/$username/file8
 echo "Created password_file with human-readable text, 1033 bytes in size, not executable."
 
 # Create 10 files without the specified features
-for i in {1..10}; do
-    echo -n -e '\x10\x20\x30\x40\x50\x60\x70\x80' > file$i
+for ((i=0;i<=7;i++)); do
+    echo -n -e '\x10\x20\x30\x40\x50\x60\x70\x80' > /home/$username/file$i
     echo "Created file$i without the specified features."
 done
+
+for ((i=9;i<=12;i++)); do
+    echo -n -e '\x10\x20\x30\x40\x50\x60\x70\x80' > /home/$username/file$i
+    echo "Created file$i without the specified features."
+done
+
+# Set permissions for files
+    for ((j=0; j<=12; j++)); do
+        #file="/home/$username/file$j"
+        chmod 440 /home/$username/file$j
+        chgrp shell05 /home/$username/file$j
+    done
+
+# cat the figlet bammer om the .bashrc file
+echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell04'" >> /home/$username/.bashrc

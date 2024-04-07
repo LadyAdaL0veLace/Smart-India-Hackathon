@@ -7,9 +7,8 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 username="shell02"
-passwordNextLevel="shell03"
 
-# Check if the user already exists
+# Check if the user exists
 if ! id "$username" &>/dev/null; then
     echo "User '$username' does not exist."
     exit 1
@@ -20,7 +19,13 @@ mkdir /home/$username/inhere
 echo "Directory named 'inhere' has been created in the user's home directory."
 
 # Create a file named .hidden in the directory inhere
-echo "The password to the next level is $passwordNextLevel" > /home/$username/inhere/.hidden
+echo "The password to the next level is shell03" > /home/$username/inhere/.hidden
 echo "File named '.hidden' has been created in 'inhere' directory."
 
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell02'" >> /home/shell02/.bashrc
+chmod 441 /home/$username/inhere
+chgrp shell03 /home/$username/inhere
+chmod 440  /home/$username/inhere/.hidden
+chgrp shell03  /home/$username/inhere/.hidden
+
+# cat the figlet bammer om the .bashrc file
+echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell02'" >> /home/$username/.bashrc
