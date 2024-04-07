@@ -7,19 +7,12 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 username="shell03"
-passwd="shell03"
 
 # Check if the user already exists
-if id "$username" &>/dev/null; then
-    echo "User '$username' already exists."
+if ! id "$username" &>/dev/null; then
+    echo "User '$username' does not exist."
     exit 1
 fi
-
-# Create the user with the hardcoded username and password
-useradd -m -s /bin/bash "$username"
-echo "$username:$passwd" | chpasswd
-
-echo "User '$username' created successfully with password."
 
 # Create a file with non-human-readable text
 echo -n -e '\x10\x20\x30\x40\x50\x60\x70\x80' > file1
