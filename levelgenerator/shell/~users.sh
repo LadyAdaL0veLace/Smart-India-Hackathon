@@ -6,12 +6,11 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# Get the home directory of the root user
-home_dir=$(getent passwd root | cut -d: -f6)
-
-# Remove users
+# Remove users and their home directories
 for ((i=0; i<=10; i++)); do
     username="shell$(printf '%02d' $i)"
+
+    # Remove user and home directory
     userdel -r "$username" &>/dev/null
     if [ $? -eq 0 ]; then
         echo "User '$username' has been removed."
@@ -21,11 +20,13 @@ for ((i=0; i<=10; i++)); do
 done
 
 # Remove .passwords.txt file from home directory
-if [ -f /home/.passwords.txt ]; then
-    rm /home/.passwords.txt
+passwords_file="/home/.passwords.txt"
+if [ -f "$passwords_file" ]; then
+    rm "$passwords_file"
     echo "The .passwords.txt file has been removed from the home directory."
 else
     echo "The .passwords.txt file does not exist in the home directory."
 fi
 
 echo "Uninstallation completed."
+

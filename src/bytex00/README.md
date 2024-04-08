@@ -23,10 +23,11 @@
 
 ```
 OUTPUT	
-
-Port         Protocol Type        Board Name FQBN Core
-/dev/ttyAMA0 serial   Serial Port Unknown
+Port         Protocol Type              Board Name  FQBN            Core
+/dev/ttyACM0 serial   Serial Port (USB) Arduino Uno arduino:avr:uno arduino:avr
 ```
+
+- Here /dev/ttyACM0 is the port number, you must remember this to upload you code next time.
 
 ### Verify installation
 
