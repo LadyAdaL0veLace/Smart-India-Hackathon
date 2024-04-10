@@ -35,6 +35,7 @@ done
     for ((j=0; j<=12; j++)); do
         #file="/home/$username/file$j"
         chmod 440 /home/$username/file$j
+        chown $username /home/$username/file$j
         chgrp shell05 /home/$username/file$j
     done
 

@@ -19,6 +19,7 @@ echo "The Password to the next level is shell01" > /home/$username/readme.txt
 echo "readme.txt file has been created."
 
 chmod 440 /home/$username/readme.txt
+chown $username /home/$username/readme.txt
 chgrp shell01 /home/$username/readme.txt
 
 # cat the figlet bammer om the .bashrc file

@@ -44,6 +44,7 @@ echo "Created file8 with non-human-readable text."
     for ((j=1; j<=8; j++)); do
         file="/home/$username/file$j"
         chmod 440 "$file"
+        chown $username "$file"
         chgrp shell04 "$file"
     done
 
