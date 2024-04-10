@@ -15,21 +15,23 @@ if ! id "$username" &>/dev/null; then
 fi
 
 # Create a directory named inhere in the user's home directory
-mkdir /home/$username/inhere
+dir="/home/$username/inhere"
+mkdir $dir
 echo "Directory named 'inhere' has been created in the user's home directory."
 
 # Create a file named .hidden in the directory inhere
-echo "The password to the next level is shell03" > /home/$username/inhere/.hidden
+file="/home/$username/inhere/.hidden"
+echo "The password to the next level is shell03" > $file
 echo "File named '.hidden' has been created in 'inhere' directory."
 
-chmod 441 /home/$username/inhere
-chown shell03 /home/$username/inhere
-chgrp $username /home/$username/inhere
-chattr +i /home/$username/inhere
-chmod 440  /home/$username/inhere/.hidden
-chown shell03 /home/$username/inhere/.hidden
-chgrp $username  /home/$username/inhere/.hidden
-chattr +i /home/$username/inhere/.hidden
+chmod 441 $dir
+chown shell03 $dir
+chgrp $username $dir
+#chattr +i $dir
+chmod 440  $file
+chown shell03 $file
+chgrp $username  $file
+#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell02'" >> /home/$username/.bashrc

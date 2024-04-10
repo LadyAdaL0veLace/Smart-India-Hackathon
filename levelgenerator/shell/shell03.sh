@@ -47,7 +47,7 @@ echo "Created file8 with non-human-readable text."
         chmod 440 "$file"
         chown shell04 "$file"
         chgrp $username "$file"
-        chattr +i "$file"
+        #chattr +i "$file"
     done
 
 # cat the figlet bammer om the .bashrc file

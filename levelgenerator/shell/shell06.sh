@@ -23,26 +23,28 @@ generate_random_strings() {
 }
 
 # Generate random strings
-generate_random_strings > /home/$username/temp_strings.txt
+temp_file="/home/$username/temp_strings.txt"
+generate_random_strings > $temp_file
 
 # Count occurrences of each string and ensure there are at least two copies of each
-awk '{count[$0]++} END {for (string in count) {if (count[string] < 2) {print string >> "/home/'"$username"'/temp_strings.txt"}}}' /home/$username/temp_strings.txt
+awk '{count[$0]++} END {for (string in count) {if (count[string] < 2) {print string >> "/home/'"$username"'/temp_strings.txt"}}}' $temp_file
 
 # Duplicate the strings
-cat /home/$username/temp_strings.txt /home/$username/temp_strings.txt > /home/$username/data.txt
+file="/home/$username/data.txt"
+cat $temp_file $temp_file > $file
 
 # Clean up temporary file
-rm /home/$username/temp_strings.txt
+rm $temp_file
 
 # Append the unique password
-echo "The Password for the next level is shell07" >> /home/$username/data.txt
+echo "The Password for the next level is shell07" >> $file
 
 echo "data.txt created with random strings and the unique password."
 
-chmod 440 /home/$username/data.txt
-chown shell07 /home/$username/data.txt
-chgrp $username /home/$username/data.txt
-chattr +i /home/$username/data.txt
+chmod 440 $file
+chown shell07 $file
+chgrp $username $file
+#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell06'" >> /home/$username/.bashrc

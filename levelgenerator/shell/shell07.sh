@@ -22,25 +22,27 @@ generate_random_strings() {
 }
 
 # Generate random strings
-generate_random_strings > /home/$username/temp_strings.txt
+temp_file="/home/$username/temp_strings.txt"
+generate_random_strings > $temp_file
 
 # Create data.txt with random strings and the hidden password
-cat /home/$username/temp_strings.txt > /home/$username/data.txt
-echo "========== The" >> /home/$username/data.txt
-echo "========== Password" >> /home/$username/data.txt
-echo "========== is=" >> /home/$username/data.txt
-echo "========== shell08" >> /home/$username/data.txt
+file="/home/$username/data.txt"
+cat $temp_file > $file
+echo "========== The" >> $file
+echo "========== Password" >> $file
+echo "========== is=" >> $file
+echo "========== shell08" >> $file
 
 # Clean up temporary file
-rm /home/$username/temp_strings.txt
+rm $temp_file
 
 echo "data.txt created with random strings and the hidden password."
 
 
-chmod 440 /home/$username/data.txt
-chown shell08 /home/$username/data.txt
-chgrp $username /home/$username/data.txt
-chattr +i /home/$username/data.txt
+chmod 440 $file
+chown shell08 $file
+chgrp $username $file
+#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell07'" >> /home/$username/.bashrc

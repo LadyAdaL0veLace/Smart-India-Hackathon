@@ -14,10 +14,11 @@ if ! id "$username" &>/dev/null; then
     exit 1
 fi
 
-chmod 440 /home/$username/data.txt
-chown shell10 /home/$username/data.txt
-chgrp $username /home/$username/data.txt
-chattr +i /home/$username/data.txt
+file="/home/$username/data.txt"
+chmod 440 $file
+chown shell10 $file
+chgrp $username $file
+#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell09'" >> /home/$username/.bashrc
