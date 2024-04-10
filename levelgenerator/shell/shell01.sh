@@ -12,8 +12,8 @@ username="shell01"
 echo "The Password to the next level is shell02" > /home/$username/-
 echo "File named '-' has been created."
 chmod 440 /home/$username/-
-chown $username /home/$username/-
-chgrp shell02 /home/$username/-
-
+chown shell02 /home/$username/-
+chgrp $username /home/$username/-
+chattr +i /home/$username/-
 # create the level banner for shell01
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell01'" >> /home/$username/.bashrc

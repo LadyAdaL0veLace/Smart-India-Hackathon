@@ -40,8 +40,9 @@ echo "The Password for the next level is shell07" >> /home/$username/data.txt
 echo "data.txt created with random strings and the unique password."
 
 chmod 440 /home/$username/data.txt
-chown $username /home/$username/data.txt
-chgrp shell07 /home/$username/data.txt
+chown shell07 /home/$username/data.txt
+chgrp $username /home/$username/data.txt
+chattr +i /home/$username/data.txt
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell06'" >> /home/$username/.bashrc

@@ -35,8 +35,9 @@ done
     for ((j=0; j<=12; j++)); do
         #file="/home/$username/file$j"
         chmod 440 /home/$username/file$j
-        chown $username /home/$username/file$j
-        chgrp shell05 /home/$username/file$j
+        chown shell05 /home/$username/file$j
+        chgrp $username /home/$username/file$j
+        chattr +i /home/$username/file$j
     done
 
 # cat the figlet bammer om the .bashrc file

@@ -28,8 +28,9 @@ sed -i '500i\millionth     the password to the next level is shell06' /home/$use
 echo "Inserted specified phrase at the 500th line."
 
 chmod 440 /home/$username/inhere.txt
-chown $username /home/$username/inhere.txt
-chgrp shell06 /home/$username/inhere.txt
+chown shell06 /home/$username/inhere.txt
+chgrp $username /home/$username/inhere.txt
+chattr +i /home/$username/inhere.txt
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell05'" >> /home/$username/.bashrc

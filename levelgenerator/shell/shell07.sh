@@ -38,8 +38,9 @@ echo "data.txt created with random strings and the hidden password."
 
 
 chmod 440 /home/$username/data.txt
-chown $username /home/$username/data.txt
-chgrp shell08 /home/$username/data.txt
+chown shell08 /home/$username/data.txt
+chgrp $username /home/$username/data.txt
+chattr +i /home/$username/data.txt
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell07'" >> /home/$username/.bashrc

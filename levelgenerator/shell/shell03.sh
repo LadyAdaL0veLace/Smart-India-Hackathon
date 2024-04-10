@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Check if the script is run with root privileges
@@ -44,8 +45,9 @@ echo "Created file8 with non-human-readable text."
     for ((j=1; j<=8; j++)); do
         file="/home/$username/file$j"
         chmod 440 "$file"
-        chown $username "$file"
-        chgrp shell04 "$file"
+        chown shell04 "$file"
+        chgrp $username "$file"
+        chattr +i "$file"
     done
 
 # cat the figlet bammer om the .bashrc file
