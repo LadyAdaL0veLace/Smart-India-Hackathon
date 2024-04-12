@@ -11,6 +11,7 @@ for ((i=0; i<=10; i++)); do
     username="shell$(printf '%02d' $i)"
 
     # Remove user and home directory
+    rm -rf /home/"$username"
     userdel -r "$username" &>/dev/null
     if [ $? -eq 0 ]; then
         echo "User '$username' has been removed."

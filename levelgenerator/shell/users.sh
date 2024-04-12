@@ -35,6 +35,9 @@ for ((i=0; i<=10; i++)); do
     if [ $? -eq 0 ]; then
         echo "$username:${user_passwords[$username]}" | chpasswd
         echo "User '$username' created."
+	# change the ownership to root
+	chown -R root:root /home/$username
+	echo "User home folder and sub folder permsission set to root"
     else
         echo "Failed to create user '$username'."
         continue

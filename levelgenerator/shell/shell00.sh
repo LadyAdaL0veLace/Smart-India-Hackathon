@@ -23,5 +23,3 @@ chmod 640 $file
 chown shell01 $file
 chgrp $username $file
 
-# cat the figlet bammer om the .bashrc file
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell00'" >> /home/$username/.bashrc

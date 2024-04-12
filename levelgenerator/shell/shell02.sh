@@ -20,14 +20,12 @@ mkdir $dir
 echo "Directory named 'inhere' has been created in the user's home directory."
 
 # Create a file named .hidden in the directory inhere
-file="/home/$username/inhere/.hidden"
+file="$dir/.hidden"
 echo "The password to the next level is shell03" > $file
 echo "File named '.hidden' has been created in 'inhere' directory."
 
 chmod 755 $dir
-chown shell03 $dir
-chgrp $username $dir
+chown root:root $dir
 
-chmod 640  $file
-chown shell03 $file
-chgrp $username  $file
+chmod 640 $file
+chown shell03:$username $file
