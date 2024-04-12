@@ -38,6 +38,3 @@ done
         chown shell05 $file
         chgrp $username $file
     done
-
-# cat the figlet bammer om the .bashrc file
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell04'" >> /home/$username/.bashrc

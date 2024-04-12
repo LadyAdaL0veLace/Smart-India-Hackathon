@@ -18,6 +18,3 @@ file="/home/$username/data.txt"
 chmod 640 $file
 chown shell10 $file
 chgrp $username $file
-
-# cat the figlet bammer om the .bashrc file
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell09'" >> /home/$username/.bashrc

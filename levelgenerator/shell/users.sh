@@ -50,6 +50,8 @@ for ((i=0; i<=10; i++)); do
 
     echo "Username: $username, Password: ${user_passwords[$username]}" >> /home/.passwords.txt
 
+    # cat the figlet banner om the .bashrc file
+    echo "figlet -lf /usr/share/figlet/ANSIShadow.flf '$username'" >> /home/$username/.bashrc
 done
 
 chmod 700 /home/.passwords.txt

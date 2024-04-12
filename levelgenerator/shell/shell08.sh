@@ -21,6 +21,3 @@ echo "Encrypted password created"
 chmod 640 $file
 chown shell09 $file
 chgrp $username $file
-
-# cat the figlet bammer om the .bashrc file
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell08'" >> /home/$username/.bashrc

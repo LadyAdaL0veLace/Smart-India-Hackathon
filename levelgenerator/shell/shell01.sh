@@ -16,5 +16,3 @@ chmod 640 $file
 chown shell02 $file
 chgrp $username $file
 
-# create the level banner for shell01
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell01'" >> /home/$username/.bashrc

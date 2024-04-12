@@ -49,5 +49,3 @@ echo "Created file8 with non-human-readable text."
         chgrp $username "$file"
     done
 
-# cat the figlet bammer om the .bashrc file
-echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell03'" >> /home/$username/.bashrc
