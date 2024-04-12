@@ -24,14 +24,13 @@ file="/home/$username/inhere/.hidden"
 echo "The password to the next level is shell03" > $file
 echo "File named '.hidden' has been created in 'inhere' directory."
 
-chmod 441 $dir
+chmod 755 $dir
 chown shell03 $dir
 chgrp $username $dir
-#chattr +i $dir
-chmod 440  $file
+
+chmod 640  $file
 chown shell03 $file
 chgrp $username  $file
-#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell02'" >> /home/$username/.bashrc

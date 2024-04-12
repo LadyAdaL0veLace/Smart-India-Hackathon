@@ -44,10 +44,9 @@ echo "Created file8 with non-human-readable text."
 # Set permissions for files
     for ((j=1; j<=8; j++)); do
         file="/home/$username/file$j"
-        chmod 440 "$file"
+        chmod 640 "$file"
         chown shell04 "$file"
         chgrp $username "$file"
-        #chattr +i "$file"
     done
 
 # cat the figlet bammer om the .bashrc file

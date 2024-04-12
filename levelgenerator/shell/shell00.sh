@@ -19,10 +19,9 @@ file="/home/$username/readme.txt"
 echo "The Password to the next level is shell01" > $file
 echo "readme.txt file has been created."
 
-chmod 440 $file
+chmod 640 $file
 chown shell01 $file
 chgrp $username $file
-#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell00'" >> /home/$username/.bashrc

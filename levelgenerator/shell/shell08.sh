@@ -18,10 +18,9 @@ file="/home/$username/encrypted.txt"
 echo "The Password for the next lavel is shell09" | tr 'a-zA-Z' 'x-za-wX-ZA-W' > $file
 echo "Encrypted password created"
 
-chmod 440 $file
+chmod 640 $file
 chown shell09 $file
 chgrp $username $file
-#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell08'" >> /home/$username/.bashrc

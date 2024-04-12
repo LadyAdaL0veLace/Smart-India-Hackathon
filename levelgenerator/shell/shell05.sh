@@ -28,10 +28,9 @@ echo "Created file with random words in two columns."
 sed -i '500i\millionth     the password to the next level is shell06' $file
 echo "Inserted specified phrase at the 500th line."
 
-chmod 440 $file
+chmod 640 $file
 chown shell06 $file
 chgrp $username $file
-#chattr +i $file
 
 # cat the figlet bammer om the .bashrc file
 echo "figlet -lf /usr/share/figlet/ANSIShadow.flf 'Shell05'" >> /home/$username/.bashrc
