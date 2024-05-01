@@ -14,6 +14,9 @@
 
 - This level will teach you how to blink an led using the **arduino-cli**
 
+## Connections
+
+- Connect CN9 to CN4
 
 ### Create our first sketch, the blink, with the command:
 ```arduino-cli sketch new Blink```
@@ -43,6 +46,7 @@ void loop() {
 ## Upload
 ```arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno Blink/```
 
-
-
-
+# Your Task
+- Your task is to create another sketch called blink1
+- connect CN4 to CN9 
+- blink an led connect to pin number 15, 12, 3 and 5

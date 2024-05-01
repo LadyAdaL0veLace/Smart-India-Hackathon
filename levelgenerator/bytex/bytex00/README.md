@@ -13,12 +13,13 @@
 
 - Welcome to level zero of the BYTEX challenges
 
-- This level will teach you how to install the **arduino-cli** software for the arduino UNO bloard
+- This level will teach you how to install the **arduino-cli** software for the arduino UNO board
 
 ### install the script
 ```./install_arduino_cli.sh```
 
-### If you don’t know what kind of board you have, simply connect it to the Raspberry Pi via USB, type the following command and examine the output:
+
+### After the installation, if you don’t know what kind of board you have, simply connect it to the Raspberry Pi via USB, type the following command and examine the output:
 ```arduino-cli board list```
 
 ```

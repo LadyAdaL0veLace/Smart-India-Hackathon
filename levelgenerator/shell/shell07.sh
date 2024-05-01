@@ -17,7 +17,8 @@ fi
 # Function to generate random strings
 generate_random_strings() {
     for ((i=0; i<50; i++)); do
-        echo "$(cat /dev/urandom | fold -w 32 | head -n 1)"
+        tr -dc '[:print:]' < /dev/urandom | fold -w 32 | head -n 1
+        #echo "$(cat /dev/urandom | fold -w 32 | head -n 1)"
     done
 }
 
