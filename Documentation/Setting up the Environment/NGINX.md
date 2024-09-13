@@ -60,8 +60,11 @@ location / {
 - Create or clone the website folder here.   
 `sudo git clone https://github.com/srushtim-01/Vort3x-Website.git`   
 
-- Change permissions of the folder so that the user can perform git pull, push actions from within this folder   
-`sudo chmod -R 755 /var/www/Vortex-Website
+- Command to change the ownership of the folder and its contents
+`sudo chown -R username:username /var/www/Vortex-Website`   
+
+- Command to adjust the permissions of the folder and its contents. For Git operations, you typically need read and write permissions.  
+`sudo chmod -R 755 /var/www/Vortex-Website`
 
 - You can safely reload nginx    
 `sudo nginx -s reload`
